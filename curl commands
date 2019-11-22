@@ -1,0 +1,10 @@
+// Authentication Api
+curl -X POST https://safe-thicket-84201.herokuapp.com/authenticate -H 'Content-Type: application/json' -d '{ "username": "test", "password": "test" }'
+
+
+// Get bank details with ifsc code
+curl -X GET 'https://safe-thicket-84201.herokuapp.com/bank/branches?ifsc=ABHY0065001' -H 'Authorization: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0IiwiZXhwIjoxNTc0ODUwNjk1LCJpYXQiOjE1NzQ0MTg2OTV9.ty6grx6YfilVSdOdqOmvj41hwNNNpOhwYgImFFzatd3bZYr3QtcqilGcwYAPjL3D0MXAO5xdTy4csTb65OY57g'
+
+// Pagination support
+curl -X POST 'https://safe-thicket-84201.herokuapp.com/bank?name=ABHYUDAYA%20COOPERATIVE%20BANK%20LIMITED&city=MUMBAI' -H 'Authorization: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0IiwiZXhwIjoxNTc0ODUxMjIyLCJpYXQiOjE1NzQ0MTkyMjJ9.ThfzrLUgwYJHQhvzcjU76A-0i45LbW0xCj7X0WHii3xU4R8mkUbP_NE8qoQpZRxGcmNGc20rga9PxQ3ohWziqA'  -H 'Content-Type: application/json' -d '{ "page": 1, "size": 10 }'
+
