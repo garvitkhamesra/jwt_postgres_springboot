@@ -1,7 +1,7 @@
 package com.garvit.fylebackend.api.service.impl;
 
 import com.garvit.fylebackend.api.dao.BankBranchesDetails;
-import com.garvit.fylebackend.api.domain.request.BankDetailRequest;
+import com.garvit.fylebackend.api.domain.request.PaginationDetails;
 import com.garvit.fylebackend.api.repository.BankBranchesRepository;
 import com.garvit.fylebackend.api.service.BankDetailService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,9 +33,8 @@ public class BankDetailServiceImpl implements BankDetailService {
     }
 
     @Override
-    public List<BankBranchesDetails> getBankDetailsFromRequest(BankDetailRequest bankDetailRequest) {
-        Pageable pageRequest = PageRequest.of(bankDetailRequest.getPage(), bankDetailRequest.getSize());
-        return bankBranchesRepository.findByBankNameAndCity(bankDetailRequest.getBankName(),
-                bankDetailRequest.getCity(), pageRequest);
+    public List<BankBranchesDetails> getBankDetailsFromRequest(String bankName, String city, PaginationDetails paginationDetails) {
+        Pageable pageRequest = PageRequest.of(paginationDetails.getPage(), paginationDetails.getSize());
+        return bankBranchesRepository.findByBankNameAndCity(bankName, city, pageRequest);
     }
 }

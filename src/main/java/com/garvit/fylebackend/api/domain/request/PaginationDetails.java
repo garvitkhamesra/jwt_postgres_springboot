@@ -10,11 +10,9 @@ import java.io.Serializable;
  */
 
 @Data
-public class BankDetailRequest implements Serializable {
+public class PaginationDetails implements Serializable {
     private static final long serialVersionUID = -7063078197035474508L;
 
-    private String bankName;
-    private String city;
     private Integer page;
     private Integer size;
 }
